@@ -1,0 +1,29 @@
+html {
+  background: #e9ebee;
+}
+
+.form-wrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: url("./images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.form-paper {
+  position: relative;
+  top: 5%;
+  left: 30%;
+  width: 40%;
+  padding: 10px 20px;
+}
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 1rem;
+  font-style: italic;
+  color: rgba(228, 236, 218, 0.884);
+}

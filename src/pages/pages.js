@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import JwtDecode from "jwt-decode";
 import Axios from "axios";
+import "../style.css";
 
 import {
   ThemeProvider as MuiThemeProvider,
@@ -47,8 +48,7 @@ const Pages = () => {
           <div
             style={{
               maxWidth: "1200px",
-              margin: "50px auto 0",
-              backgroundColor: "#e9ebee"
+              margin: "50px auto 0"
             }}
           >
             <Navbar />
