@@ -4,7 +4,8 @@ import {
   Dialog,
   Button,
   DialogTitle,
-  DialogContent
+  DialogContent,
+  Tooltip
 } from "@material-ui/core";
 import { FaPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
@@ -27,9 +28,11 @@ const PostForm = () => {
 
   return (
     <>
-      <IconButton onClick={() => setOpen(true)}>
-        <FaPlus />
-      </IconButton>
+      <Tooltip title="Add Post">
+        <IconButton onClick={() => setOpen(true)}>
+          <FaPlus />
+        </IconButton>
+      </Tooltip>
       <Dialog
         open={open}
         onClose={() => setOpen(false)}

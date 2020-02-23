@@ -12,7 +12,7 @@ const DeletePost = ({ postId }) => {
   return (
     <Tooltip title="Delete" placement="top">
       <IconButton onClick={handleDelete} className="test-class">
-        <FaTrash />
+        <FaTrash color="red" />
       </IconButton>
     </Tooltip>
   );

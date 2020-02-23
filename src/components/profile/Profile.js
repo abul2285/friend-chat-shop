@@ -19,6 +19,7 @@ import {
 import UnknownImage from "../../images/images.png";
 import ProfilePicture from "../../images/images4.png";
 import { MyCard } from "../Card/Card";
+import LinkIcon from "../Icon/LinkIcon";
 
 dayjs.extend(relativeTime);
 
@@ -66,9 +67,12 @@ const Profile = () => {
             </Box>
 
             <Box flexGrow={1}>
-              <IconButton>
-                <FaEdit />
-              </IconButton>
+              <Tooltip title="Edit Profile">
+                <IconButton>
+                  <FaEdit />
+                </IconButton>
+              </Tooltip>
+              {/* <LinkIcon title="Edit Profile"></LinkIcon> */}
             </Box>
           </MyCard.Actions>
         </MyCard>
@@ -84,21 +88,17 @@ const Profile = () => {
         </CardActionArea>
         <MyCard.Actions>
           <Box flexGrow={1}>
-            <Link to="/login">
-              <IconButton>
-                <FaSignInAlt />
-              </IconButton>
-              Login
-            </Link>
+            <LinkIcon title="Login" pathLocation="/login">
+              <FaSignInAlt />
+            </LinkIcon>
+            Login
           </Box>
 
           <Box flexGrow={1}>
-            <Link to="/signup">
-              <IconButton>
-                <FaUserPlus />
-              </IconButton>
-              Sign up
-            </Link>
+            <LinkIcon title="Sign up" pathLocation="/signup">
+              <FaUserPlus />
+            </LinkIcon>
+            Sing Up
           </Box>
         </MyCard.Actions>
       </MyCard>

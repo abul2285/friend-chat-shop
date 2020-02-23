@@ -8,7 +8,7 @@ export const StyledInput = styled(TextField)`
     & > * {
       margin: 0 auto 12px;
       padding: 0 0 0 5px;
-      height: 40px;
+      height: 35px;
 
       & > * {
         border: 0;

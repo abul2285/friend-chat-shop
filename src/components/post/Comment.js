@@ -15,7 +15,8 @@ import {
   DialogContent,
   CardContent,
   CardActions,
-  Button
+  Button,
+  Tooltip
 } from "@material-ui/core";
 
 import { StyledCard, MyCard } from "../Card/Card";
@@ -71,9 +72,11 @@ const Comments = ({ postId }) => {
   };
   return (
     <>
-      <IconButton onClick={handleOpen}>
-        <FaCommentDots />
-      </IconButton>
+      <Tooltip title="Comment" placement="top">
+        <IconButton onClick={handleOpen}>
+          <FaCommentDots />
+        </IconButton>
+      </Tooltip>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogContent>
           <StyledCard>

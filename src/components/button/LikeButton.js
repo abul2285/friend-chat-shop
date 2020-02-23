@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Tooltip } from "@material-ui/core";
 import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -30,9 +30,11 @@ const LikeButton = ({ postId }) => {
   );
 
   return (
-    <IconButton onClick={liked ? unlikePost : likePost}>
-      {likeButtonMarkup}
-    </IconButton>
+    <Tooltip title={liked ? "Unlike" : "Like"} placement="top">
+      <IconButton onClick={liked ? unlikePost : likePost}>
+        {likeButtonMarkup}
+      </IconButton>
+    </Tooltip>
   );
 };
 
