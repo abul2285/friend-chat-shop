@@ -26,6 +26,9 @@ const generateClassName = createGenerateClassName({
 const Pages = () => {
   const dispatch = useDispatch();
 
+  Axios.defaults.baseURL =
+    "https://us-central1-friends-chat-shop.cloudfunctions.net/api";
+
   let token = localStorage.FBIdToken;
   if (token) {
     const decodedToken = JwtDecode(token);
