@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { FaHome, FaBell, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import PostForm from "../post/PostForm";
 import LinkIcon from "../Icon/LinkIcon";
+import Notification from "../Notification/Notification";
 
 const Navbar = () => {
   const authenticated = useSelector(state => state.friend.authenticated);
@@ -18,11 +19,12 @@ const Navbar = () => {
             </LinkIcon>
 
             <PostForm />
-            <Tooltip title="Notification" placement="right">
+            {/* <Tooltip title="Notification" placement="right">
               <IconButton>
                 <FaBell />
               </IconButton>
-            </Tooltip>
+            </Tooltip> */}
+            <Notification />
           </>
         ) : (
           <>

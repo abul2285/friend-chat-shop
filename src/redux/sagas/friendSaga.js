@@ -66,6 +66,11 @@ function* unlikePostSaga({ postId }) {
   yield put({ type: "UNLIKE_POST_SUCCESS", payload: res.data });
 }
 
+function* readNotificationSaga({ payload }) {
+  yield call(() => Axios.post("/notifications", payload));
+  yield put({ type: "NOTIFICATIONS_READ_SUCCESS" });
+}
+
 export default [
   takeLatest("LOGIN_USER", requestLoginSaga),
   takeLatest("SIGNUP_USER", requestLoginSaga),
@@ -73,5 +78,6 @@ export default [
   takeLatest("UNSET_AUTH", unsetAuthSaga),
   takeLatest("GET_FRIEND", getFriendSaga),
   takeLatest("LIKE_POST", likePostSaga),
-  takeLatest("UNLIKE_POST", unlikePostSaga)
+  takeLatest("UNLIKE_POST", unlikePostSaga),
+  takeLatest("READ_NOTIFICATION", readNotificationSaga)
 ];

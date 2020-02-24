@@ -30,14 +30,14 @@ const Profile = () => {
     dispatch({ type: "GET_FRIEND" });
   }, []);
 
-  const { credentails } = useSelector(state => state.friend);
+  const { credentials } = useSelector(state => state.friend);
 
   const handleLogout = () => {
     dispatch({ type: "UNSET_AUTH" });
   };
 
   let friendMarkup;
-  if (credentails.name) {
+  if (credentials.name) {
     friendMarkup = (
       <>
         <MyCard>
@@ -47,11 +47,11 @@ const Profile = () => {
 
           <MyCard.Content>
             <Typography variant={"h6"} gutterBottom>
-              Name: {credentails.name}
+              Name: {credentials.name}
             </Typography>
-            <Typography variant="body1">Email: {credentails.email}</Typography>
+            <Typography variant="body1">Email: {credentials.email}</Typography>
             <Typography variant="body1">
-              User Name: {credentails.userName}
+              User Name: {credentials.userName}
             </Typography>
           </MyCard.Content>
 

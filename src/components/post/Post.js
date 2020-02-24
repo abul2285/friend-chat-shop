@@ -24,7 +24,7 @@ dayjs.extend(RelativeTime);
 const Post = ({ post, modelOpen }) => {
   const { body, createdAt, likeCount, commentCount, creator, postId } = post;
   const authenticated = useSelector(state => state.friend.authenticated);
-  const friend = useSelector(state => state.friend.credentails.userName);
+  const friend = useSelector(state => state.friend.credentials.userName);
 
   let deleteButtonMarkup;
   if (friend === creator) {

@@ -12,7 +12,7 @@ import {
 
 const initialState = {
   authenticated: false,
-  credentails: {},
+  credentials: {},
   likes: [],
   notifications: [],
   loading: false,
@@ -49,10 +49,15 @@ export default function(state = initialState, action) {
         likes: [
           ...state.likes,
           {
-            liker: state.credentails.userName,
+            liker: state.credentials.userName,
             postId: action.payload.postId
           }
         ]
+      };
+    case "NOTIFICATIONS_READ_SUCCESS":
+      state.notifications.forEach(not => (not.read = true));
+      return {
+        ...state
       };
     case "UNLIKE_POST_SUCCESS":
       return {
