@@ -52,7 +52,10 @@ const Comments = ({ postId }) => {
         <MyCard>
           <MyCard.Content>
             <div className="comment--box">
-              <Avatar src={Commenter} className="commenter--image" />
+              <Avatar
+                src={comment.commenterImage}
+                className="commenter--image"
+              />
               <div className="commenter--content">
                 <Typography>
                   <Link to={`/friend/${comment.commenter}`}>
@@ -81,7 +84,7 @@ const Comments = ({ postId }) => {
         <DialogContent>
           <StyledCard>
             <div className="card-header">
-              <Avatar alt="profile-pic" src={PostCreator} />
+              <Avatar alt="profile-pic" src={post.userImage} />
               <Typography variant="body1">{post.creator}</Typography>
               <Typography variant="body1" color="textSecondary">
                 {dayjs(post.createdAt).fromNow()}

@@ -17,12 +17,19 @@ import DeletePost from "../button/DeletePost";
 import LikeButton from "../button/LikeButton";
 import { StyledCard } from "../Card/Card";
 import Comments from "./Comment";
-import PostCreator from "../../images/images2.png";
 
 dayjs.extend(RelativeTime);
 
 const Post = ({ post, modelOpen }) => {
-  const { body, createdAt, likeCount, commentCount, creator, postId } = post;
+  const {
+    body,
+    createdAt,
+    likeCount,
+    commentCount,
+    creator,
+    postId,
+    userImage
+  } = post;
   const authenticated = useSelector(state => state.friend.authenticated);
   const friend = useSelector(state => state.friend.credentials.userName);
 
@@ -36,7 +43,7 @@ const Post = ({ post, modelOpen }) => {
   return (
     <StyledCard>
       <div className="card-header">
-        <Avatar alt="profile-pic" src={PostCreator} />
+        <Avatar alt="profile-pic" src={userImage} />
         <Link to={`/friend/${creator}`}>
           <Typography variant="body1">{creator}</Typography>
         </Link>

@@ -17,13 +17,7 @@ const Navbar = () => {
             <LinkIcon title="Home" placement="left" pathLocation="/">
               <FaHome />
             </LinkIcon>
-
             <PostForm />
-            {/* <Tooltip title="Notification" placement="right">
-              <IconButton>
-                <FaBell />
-              </IconButton>
-            </Tooltip> */}
             <Notification />
           </>
         ) : (

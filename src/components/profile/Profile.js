@@ -36,13 +36,29 @@ const Profile = () => {
     dispatch({ type: "UNSET_AUTH" });
   };
 
+  const handleImageChange = e => {
+    const image = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", image, image.name);
+    dispatch({ type: "UPLOAD_IMAGE", payload: formData });
+  };
+
+  const handleImageClick = () => {
+    let selectInput = document.getElementById("userImage");
+    selectInput.click();
+  };
+
   let friendMarkup;
   if (credentials.name) {
     friendMarkup = (
       <>
         <MyCard>
           <MyCard.Media>
-            <img src={ProfilePicture} alt="profile-img" className="image" />
+            <img
+              src={credentials.userImage}
+              alt="profile-img"
+              className="image"
+            />
           </MyCard.Media>
 
           <MyCard.Content>
@@ -56,6 +72,12 @@ const Profile = () => {
           </MyCard.Content>
 
           <Divider />
+          <input
+            type="file"
+            id="userImage"
+            onChange={handleImageChange}
+            hidden="hidden"
+          />
 
           <MyCard.Actions>
             <Box flexGrow={1}>
@@ -67,12 +89,11 @@ const Profile = () => {
             </Box>
 
             <Box flexGrow={1}>
-              <Tooltip title="Edit Profile">
-                <IconButton>
+              <Tooltip title="Edit Photo" placement="top">
+                <IconButton onClick={handleImageClick}>
                   <FaEdit />
                 </IconButton>
               </Tooltip>
-              {/* <LinkIcon title="Edit Profile"></LinkIcon> */}
             </Box>
           </MyCard.Actions>
         </MyCard>

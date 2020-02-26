@@ -13,7 +13,7 @@ const StaticProfile = ({ profile }) => {
     profile && (
       <MyCard>
         <MyCard.Media>
-          <img src={PostCreator} alt="profile-img" className="image" />
+          <img src={profile.userImage} alt="profile-img" className="image" />
         </MyCard.Media>
 
         <MyCard.Content>

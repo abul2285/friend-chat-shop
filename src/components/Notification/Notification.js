@@ -90,7 +90,7 @@ const Notification = () => {
 
   return (
     <>
-      <Tooltip title="Notification" placement="top">
+      <Tooltip title="Notification" placement="right">
         <IconButton
           aria-owns={anchorEl ? "simple-menu" : undefined}
           aria-haspopup="true"

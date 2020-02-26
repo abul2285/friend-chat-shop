@@ -71,10 +71,20 @@ function* readNotificationSaga({ payload }) {
   yield put({ type: "NOTIFICATIONS_READ_SUCCESS" });
 }
 
+function* uploadImageSaga({ payload }) {
+  try {
+    yield call(() => Axios.post("/friend/image", payload));
+    yield put({ type: "GET_FRIEND" });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export default [
   takeLatest("LOGIN_USER", requestLoginSaga),
   takeLatest("SIGNUP_USER", requestLoginSaga),
   takeLatest("SET_AUTH", setAuthSaga),
+  takeLatest("UPLOAD_IMAGE", uploadImageSaga),
   takeLatest("UNSET_AUTH", unsetAuthSaga),
   takeLatest("GET_FRIEND", getFriendSaga),
   takeLatest("LIKE_POST", likePostSaga),
