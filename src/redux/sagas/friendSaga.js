@@ -43,7 +43,7 @@ function* unsetAuthSaga() {
   localStorage.removeItem("FBIdToken");
   delete Axios.defaults.headers.common["Authorization"];
   yield put({ type: UNSET_AUTH_SUCCESS });
-  window.location.href = "/login";
+  // window.location.href = "/login";
 }
 
 function* getFriendSaga() {

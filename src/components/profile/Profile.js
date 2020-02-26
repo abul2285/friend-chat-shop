@@ -112,14 +112,12 @@ const Profile = () => {
             <LinkIcon title="Login" pathLocation="/login">
               <FaSignInAlt />
             </LinkIcon>
-            Login
           </Box>
 
           <Box flexGrow={1}>
             <LinkIcon title="Sign up" pathLocation="/signup">
               <FaUserPlus />
             </LinkIcon>
-            Sing Up
           </Box>
         </MyCard.Actions>
       </MyCard>

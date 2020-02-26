@@ -64,17 +64,22 @@ const Notification = () => {
       const color = notification.read ? "#333" : "#777";
       const icon =
         type === "like" ? (
-          <FaThumbsUp color={color} />
+          <FaThumbsUp color={color} style={{ marginRight: "10px" }} />
         ) : (
-          <FaCommentDots color={color} />
+          <FaCommentDots color={color} style={{ marginRight: "10px" }} />
         );
       return (
-        <MenuItem key={notification.createdAt} onClose={handleClose}>
+        <MenuItem
+          key={notification.createdAt}
+          onClose={handleClose}
+          style={{ padding: "5px 10px" }}
+        >
           {icon}
           <Typography
             component={Link}
-            color="secondary"
+            color="textSecondary"
             variant="body1"
+            style={{ textDecoration: "none" }}
             to={`/friend/${notification.recipient}/post/${notification.postId}`}
           >
             {notification.sender} {action} your post {time}
